@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    --img-radius: 8px;
+    --img-btn-bg: rgb(241,133,133);
+    --img-btn-text-color: rgb(255,255,255); 
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: all 0.5s;
+}
+
+/*Styling the whole header here*/
+header{
+    width: 100%;
+    background: rgb(241, 133, 133);
+    /* padding: 0px 0; */
+    position: relative;
+    min-height: 10vh;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 8%;
+    background: rgb(241, 133, 133);
+    height: inherit;
+    /* border: 2px solid blue; */
+    position: fixed;
+    box-shadow: 4px 5px 5px rgb(0,0,0,0.3);
+    z-index: 1000;
+    /* left: 50%; */
+    /* transform: translate(-50%,0); */
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.nav_menu{
+    display: flex;
+    /* justify-content: space-around; */
+    /* border: 2px solid skyblue; */
+    /* align-items: center; */
+    width: 70%;
+}
+
+.nav_menu_mobile{
+    display: none;
+}
+
+.nav_menu a,.nav_menu_mobile a{
+    flex: 1;
+    display: block;
+    /* border: 1px solid brown; */
+    font-size: large;
+    color: rgb(0,0,0);
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 5px 5px;
+    text-align: center;
+}
+
+.nav_menu a:hover,.nav_menu_mobile a:hover{
+    background: rgb(0,0,0,0.4);
+    color: #fff;
+}
+/*Styling the Search input type*/
+.search-bar{
+    border-radius: 5px;
+    background-color: rgb(255,255,255);
+    /* padding-right: 10px; */
+    /* border: 2px solid brown; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="search"]{
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+    /* border: 2px solid yellow; */
+}
+
+.search-bar span{
+    cursor: pointer;
+    color: white;
+    height: inherit;
+    font-size: 2.0rem;
+    background-color: var(--img-btn-bg);
+    /* width: 20%; */
+    background-color: rgba(251, 133, 133,0.76);
+    border-radius: 0 5px 5px 0;
+}
+
+.btn-container{
+    /* border: 2px solid green; */
+    /* background: rgba(255,255,255,0.99); */
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.5s;
+    display: none;
+}
+
+.btn{
+    height: 3px;
+    width: 80%;
+    margin: auto;
+    background: #000;
+}
+
+/*Styling for the MAIN section here*/
+main{
+    padding: 20px 30px;
+    position: relative;
+}
+/*Normal Figures to A fake A DOM*/
+.users{
+    display: grid;
+    /* grid-template-columns: minmax(400px, 1fr); */
+    grid-template-columns: repeat(auto-fit, 270px);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    width: 86%;
+    margin: auto;
+    border: 2px solid green;
+    z-index: -200;
+}
+
+.users figure{
+    /* border: 1px solid chocolate; */
+    border-radius: 8px;
+    box-shadow: 4px 0 5px rgb(0,0,0,0.1);
+    transition: box-shadow 0.5s;
+}
+
+.users figure:hover{
+    box-shadow: 4px 0 8px rgb(0,0,0,0.3);
+}
+
+.users img{
+    width: 100%;
+    height: 250px;
+}
+
+.users figcaption{
+    text-align: center;
+    color: var(--img-btn-bg);
+    /* border: 1px solid yellow; */
+    font-size: 1.3rem;
+    padding: 12px 0;
+}
+
+/*Fake Dom The Pop UP part*/
+.user-details{
+    position: absolute;
+    top: 0%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(243, 245, 241, 0.747); */
+    background-color: rgba(12, 11, 11, 0.808);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 1;
+    transition: all 20s;
+}
+
+.show{
+    display: flex;
+    /* opacity: 1; */
+}
+
+.hide{
+    opacity: 0;
+    /* display: none; */
+}
+
+.user-profile{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid yellow; */
+    border-radius:10px;
+    min-height: 50vh;
+    width: 280px;
+    background-color: rgb(250,250,250);
+    box-shadow: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
+    transition: all 0.5s;
+    opacity: 1;
+    /* display: none; */
+}
+
+.user-profile:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.details-container{
+    padding: 2px 16px;
+    background-color: rgb(255,255,255);
+    border-radius: 0 0 10px 10px;
+}
+
+.details-container>div{
+    display: flex;
+    /* border: 2px solid brown;  */
+    color: var(--img-btn-bg);
+
+}
+
+.user-profile figure{
+    width: 100%;
+    text-align: center;
+
+    /* border: 3px solid orangered; */
+}
+
+.user-profile img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    /* border-radius: 50%; */
+}
+
+.details>:first-child{
+    width: 100px;
+    margin-right: 10px;
+}
+
+.details{
+    padding: 10px;
+}
+
+.user-profile p{
+    font-size: 1.2rem;
+}
+
+/*
+Coming under to make the div selection 
+styles to flex in user-profile>div useless
+*/
+
+button{
+    position: absolute;
+    left: 88%;
+    top: 22%;
+    background-color: tomato;
+    color: rgb(255,255,255);
+    padding: 5px 10px;
+    font-size: 1.0rem;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*This is the styling for the Footer section*/
+footer{
+    background: rgb(0,0,0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer>div{
+    margin: 15px 0;
+}
+
+footer a{
+    margin: 0 10px;
+    color: rgb(241, 133, 133);
+    font-size: 2rem;
+}
+
+@media(max-width: 600px){
+    header{
+        box-shadow: 0 4px 5px rgb(0,0,0,0.4);
+        padding: 10px 0;
+    }
+    .header{
+        display: flex;
+        box-shadow: none;
+    }
+    .nav_menu{
+        display: none;
+    }
+    
+    .btn-container{
+        display: flex;
+    }
+    .nav_menu{
+        display: none;
+    }
+    .nav_menu_mobile{
+        display: block;
+    }
+}
