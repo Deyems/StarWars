@@ -300,9 +300,7 @@ footer a{
 }
 
 @media(max-width: 900px){
-    header{
-        /* box-shadow: 0 4px 5px rgb(0,0,0,0.4); */
-    }
+    
     .header{
         display: flex;
         box-shadow: none;
