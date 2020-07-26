@@ -57,7 +57,6 @@ class UserList{
     /**Other Methods needed to be called in the Run method */
 
     closeDetails = (e) => {
-        // console.log('working');
         // console.log(e.target.parentElement.parentElement);
         e.target.parentElement.parentElement.classList.add('hide');
         e.target.parentElement.parentElement.classList.remove('show');
@@ -198,6 +197,7 @@ class UserList{
                     link.addEventListener('click', this.showDetails);
                 });
                 this.close_btns = document.querySelectorAll('.close-btn');
+                //add Event Listener for buttons to close the divs
                 Array.from(this.close_btns).forEach((clx) => {
                     // console.log(clx);
                     clx.addEventListener('click', this.closeDetails);
