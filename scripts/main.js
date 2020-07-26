@@ -18,7 +18,9 @@ class UserList{
     /**Selectors to Cause changes */
     user_links = null;
     // user_link = document.querySelectorAll('.users a');
-    close_btn = document.querySelectorAll('.close-btn');
+    // close_btns = document.querySelectorAll('.close-btn');
+    close_btns = null;
+
     nav_btn = document.querySelector('.btn-container');
     user_profile = document.querySelectorAll('.user-profile');
     
@@ -39,10 +41,8 @@ class UserList{
         window.addEventListener("DOMContentloaded",this.getUser(url));
         
         // this.close_btn.addEventListener('click', this.closeDetails);
-        Array.from(this.close_btn).forEach((clx) => {
-            console.log(clx);
-            clx.addEventListener('click', this.closeDetails);
-        });
+        // console.log(this.close_btn);
+        
         this.nav_btn.addEventListener('click', this.showMobileNav);
         // console.log(this.userElem.firstElementChild);
         // console.log(this.user_link);
@@ -58,9 +58,9 @@ class UserList{
 
     closeDetails = (e) => {
         // console.log('working');
-        console.log(e.target);
-        this.popUpDetails.classList.add('hide');
-        this.popUpDetails.classList.remove('show');
+        // console.log(e.target.parentElement.parentElement);
+        e.target.parentElement.parentElement.classList.add('hide');
+        e.target.parentElement.parentElement.classList.remove('show');
     }
 
     showDetails = (e) => {
@@ -196,6 +196,11 @@ class UserList{
                 //add eventlistener to links created
                 Array.from(this.user_links).forEach((link) => {
                     link.addEventListener('click', this.showDetails);
+                });
+                this.close_btns = document.querySelectorAll('.close-btn');
+                Array.from(this.close_btns).forEach((clx) => {
+                    // console.log(clx);
+                    clx.addEventListener('click', this.closeDetails);
                 });
         }catch(e){
             throw e;
