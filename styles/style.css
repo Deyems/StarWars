@@ -16,10 +16,13 @@ body{
 /*Styling the whole header here*/
 header{
     width: 100%;
-    background: rgb(241, 133, 133);
+    background: rgba(159, 124, 167, 0.623) url("../assets/images/starwars-page-header.jpg") no-repeat fixed center;
+    background-blend-mode: soft-light;
     /* padding: 0px 0; */
+    background-size: cover;
     position: relative;
-    min-height: 10vh;
+    min-height: 100vh;
+    /* border: 2px solid green; */
 }
 
 .header{
@@ -28,7 +31,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 10px 8%;
-    background: rgb(241, 133, 133);
+    background: rgb(115, 101, 243);
     height: inherit;
     /* border: 2px solid blue; */
     position: fixed;
@@ -39,33 +42,33 @@ header{
 }
 
 .logo{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
 .nav_menu{
     display: flex;
-    /* justify-content: space-around; */
     /* border: 2px solid skyblue; */
-    /* align-items: center; */
     width: 70%;
+    text-align: center;
 }
 
 .nav_menu_mobile{
     display: none;
+    text-align: left;
+    padding: 5px 25px;
 }
 
-.nav_menu a,.nav_menu_mobile a{
+.nav_menu>*,.nav_menu_mobile>*{
     flex: 1;
     display: block;
     /* border: 1px solid brown; */
     font-size: large;
     color: rgb(0,0,0);
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.4s;
-    padding: 5px 5px;
-    text-align: center;
+    padding: 5px 0px;
 }
 
 .nav_menu a:hover,.nav_menu_mobile a:hover{
@@ -73,40 +76,29 @@ header{
     color: #fff;
 }
 /*Styling the Search input type*/
-.search-bar{
-    border-radius: 5px;
-    background-color: rgb(255,255,255);
-    /* padding-right: 10px; */
-    /* border: 2px solid brown; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 input[type="search"]{
     border: 0;
-    background-color: transparent;
+    background-image: url("../assets/images/search_icon.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 30px;
     outline: none;
-    padding: 10px;
-    width: 100%;
-    border-radius: 5px 0 0 5px;
+    padding: 5px 30px;
+    width: 60px;
+    border-radius: 5px;
     /* border: 2px solid yellow; */
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
-.search-bar span{
-    cursor: pointer;
-    color: white;
-    height: inherit;
-    font-size: 2.0rem;
-    background-color: var(--img-btn-bg);
-    /* width: 20%; */
-    background-color: rgba(251, 133, 133,0.76);
-    border-radius: 0 5px 5px 0;
+input[type="search"]:focus{
+    width: 100%;
 }
+
 
 .btn-container{
     /* border: 2px solid green; */
-    /* background: rgba(255,255,255,0.99); */
     border-radius: 5px;
     height: 40px;
     width: 40px;
@@ -185,7 +177,7 @@ main{
     display: none;
     opacity: 1;
     transition: all 2s;
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     /* display: flex; */
     /* display: none; */
     height: 100vh;
@@ -308,7 +300,7 @@ footer a{
 @media(max-width: 600px){
     header{
         box-shadow: 0 4px 5px rgb(0,0,0,0.4);
-        padding: 10px 0;
+        /* padding: 10px 0; */
     }
     .header{
         display: flex;
