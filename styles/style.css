@@ -35,7 +35,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 10px 8%;
-    background: rgb(250, 249, 253);
+    background: rgba(166, 138, 250, 0.863);
     height: inherit;
     /* border: 2px solid blue; */
     position: fixed;
