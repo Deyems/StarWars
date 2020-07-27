@@ -267,8 +267,8 @@ styles to flex in user-profile>div useless
 
 button{
     position: absolute;
-    left: 88%;
-    top: 22%;
+    left: 30px;
+    top: 13%;
     background-color: var(--img-btn-bg);
     color: rgb(255,255,255);
     padding: 5px 10px;
@@ -276,6 +276,7 @@ button{
     border: 0;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
 }
 
 
