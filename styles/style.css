@@ -8,17 +8,21 @@
     --img-btn-text-color: rgb(255,255,255); 
 }
 
+@font-face {
+    font-family: 'Dana Regular';
+    src: url("/assets/fonts/dana/Dana\ Regular\ ttnorm.ttf");
+}
+
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Dana Regular', sans-serif;
     transition: all 0.5s;
 }
 
 /*Styling the whole header here*/
 header{
     width: 100%;
-    background: rgba(159, 124, 167, 0.623) url("../assets/images/starwars-page-header.jpg") no-repeat fixed center;
+    background: rgba(230, 173, 243, 0.623) url("../assets/images/starwars-page-header.jpg") no-repeat fixed center;
     background-blend-mode: soft-light;
-    /* padding: 0px 0; */
     background-size: cover;
     position: relative;
     min-height: 100vh;
@@ -37,8 +41,6 @@ header{
     position: fixed;
     box-shadow: 4px 5px 5px rgb(0,0,0,0.3);
     z-index: 1000;
-    /* left: 50%; */
-    /* transform: translate(-50%,0); */
 }
 
 .logo{
@@ -57,18 +59,39 @@ header{
 .nav_menu_mobile{
     display: none;
     text-align: left;
-    padding: 5px 25px;
+    transition: all 0.4s;
+    max-height: 0px;
+    width: 84%;
+    margin: auto;
 }
 
-.nav_menu>*,.nav_menu_mobile>*{
+.nav_menu_mobile.slideDown{
+    display: block;
+}
+
+.nav_menu>*{
     flex: 1;
     display: block;
     /* border: 1px solid brown; */
     font-size: large;
     color: rgb(0,0,0);
-    /* cursor: pointer; */
     transition: all 0.4s;
-    padding: 5px 0px;
+    padding: 10px 0px;
+}
+
+.nav_menu_mobile>*{
+    flex: 1;
+    display: block;
+    /* border: 1px solid brown; */
+    font-size: large;
+    color: rgb(0,0,0);
+    transition: all 0.4s;
+    padding: 10px 5px;
+    max-height: 0px;
+}
+
+.nav_menu_mobile>*.slideToo{
+    max-height: 50px;
 }
 
 .nav_menu a:hover,.nav_menu_mobile a:hover{
@@ -104,7 +127,6 @@ input[type="search"]:focus{
     width: 40px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     cursor: pointer;
     padding: 5px;
     transition: all 0.5s;
@@ -125,17 +147,11 @@ main{
 }
 /*Normal Figures to A fake A DOM*/
 .users{
-    /* display: grid; */
     display: block;
-    /* grid-template-columns: minmax(400px, 1fr); */
-    /* grid-template-columns: repeat(auto-fit, 220px);
-    grid-template-rows: 1fr 1fr; */
-    /* grid-gap: 25px; */
     width: 86%;
     margin: auto;
     padding: 10px 10px;
     /* border: 2px solid grey; */
-    /* border-radius: 10px; */
     box-shadow: 0px 5px 10px 0 rgba(10, 10, 10, 0.233);
     z-index: -200;
 }
@@ -144,7 +160,6 @@ main{
     /* border: 1px solid chocolate; */
     border-radius: 8px;
     margin: 5px 0;
-    /* box-shadow: 4px 0 5px rgb(0,0,0,0.1); */
     transition: box-shadow 0.5s;
 }
 
@@ -172,7 +187,6 @@ main{
     bottom: 0;
     left: 0;
     right: 0;
-    /* background-color: rgba(243, 245, 241, 0.747); */
     background-color: rgba(12, 11, 11, 0.808);
     justify-content: center;
     align-items: center;
@@ -180,8 +194,6 @@ main{
     opacity: 1;
     transition: all 2s;
     /* border: 2px solid hotpink; */
-    /* display: flex; */
-    /* display: none; */
     height: 100vh;
 }
 
@@ -192,7 +204,6 @@ main{
 
 .hide{
     opacity: 0;
-    /* display: none; */
 }
 
 .user-profile{
@@ -206,7 +217,6 @@ main{
     box-shadow: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
     transition: all 0.5s;
     opacity: 1;
-    /* display: none; */
 }
 
 .user-profile:hover{
@@ -229,14 +239,12 @@ main{
 .user-profile figure{
     width: 100%;
     text-align: center;
-
     /* border: 3px solid orangered; */
 }
 
 .user-profile img{
     width: 100%;
     border-radius: 10px 10px 0 0;
-    /* border-radius: 50%; */
 }
 
 .details>:first-child{
@@ -261,7 +269,7 @@ button{
     position: absolute;
     left: 88%;
     top: 22%;
-    background-color: tomato;
+    background-color: var(--img-btn-bg);
     color: rgb(255,255,255);
     padding: 5px 10px;
     font-size: 1.0rem;
@@ -269,16 +277,6 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /*This is the styling for the Footer section*/
@@ -299,6 +297,12 @@ footer a{
     font-size: 2rem;
 }
 
+@media(min-width: 900px){
+    .nav_menu_mobile,.nav_menu_mobile>* {
+    display: none;
+    }
+}
+
 @media(max-width: 900px){
     
     .header{
@@ -312,25 +316,12 @@ footer a{
         display: none;
     }
     .nav_menu_mobile{
-        display: block;
-    }
-}
-
-@media(max-width: 600px){
-    /* header{
-        box-shadow: 0 4px 5px rgb(0,0,0,0.4);
-    }
-    .header{
-        display: flex;
-        box-shadow: none;
-    }
-    .btn-container{
-        display: flex;
-    }
-    .nav_menu{
         display: none;
+        /* border: 2px solid green; */
+        max-height: 700px;
     }
-    .nav_menu_mobile{
-        display: block;
-    } */
+    .nav_menu_mobile>*{
+        color: #fff;
+    }
+    
 }
