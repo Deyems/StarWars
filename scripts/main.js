@@ -71,8 +71,6 @@ class StarWarriors extends User{
     }
     
     showMobileNav = (e) => {
-        console.log('touching nav button');
-        console.log(this.mobile_nav);
         this.mobile_nav.classList.toggle('slideDown');
         Array.from(this.mobile_nav.children).forEach(elem => {
             elem.classList.toggle('slideToo');
